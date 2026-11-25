@@ -1,0 +1,91 @@
+:root {
+  --bg: #f8f5ef; --card: #fffdf9; --ink: #1d1c19; --muted: #6b665c; --line: #e6dfd3;
+  --leaf: #5f9a43; --leaf-soft: #e9f0e1;
+  --body: "Maven Pro", "Noto Sans KR", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+  --logo: "Iowan Old Style", "Charis SIL", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font-family: var(--body); line-height: 1.65; -webkit-font-smoothing: antialiased; word-break: keep-all; overflow-wrap: anywhere; min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+.wrap { max-width: 880px; margin: 0 auto; padding-inline: max(20px, env(safe-area-inset-left, 0px)) max(20px, env(safe-area-inset-right, 0px)); }
+
+header { border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; align-items: center; gap: 16px; padding-block: 18px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 4px; font: 700 23px/1 var(--logo); color: #111; text-decoration: none; letter-spacing: -.005em; white-space: nowrap; }
+.logo img { height: 27px; width: auto; display: block; margin-top: -6px; }
+nav { display: flex; gap: 4px; margin-left: auto; }
+nav a { font-size: 15px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 999px; min-height: 40px; display: inline-flex; align-items: center; }
+nav a:hover { color: var(--ink); }
+nav a[aria-current="page"] { color: var(--ink); background: var(--leaf-soft); font-weight: 600; }
+.lang { display: flex; gap: 2px; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--card); }
+.lang button { border: 0; background: none; font: 600 13px var(--body); color: var(--muted); padding: 6px 11px; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+.hero { padding-block: 64px 52px; }
+.hero h1 { font-weight: 700; font-size: clamp(30px, 6vw, 46px); line-height: 1.3; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+.hero p { font-size: 17px; color: var(--muted); max-width: 34em; margin: 20px 0 0; }
+.page-title { padding-block: 48px 8px; }
+.page-title h1 { font-size: clamp(26px, 5vw, 36px); margin: 0; letter-spacing: -.01em; }
+.page-title p { color: var(--muted); margin: 10px 0 0; font-size: 16px; }
+
+section { padding-block: 36px; }
+section + section { border-top: 1px solid var(--line); }
+h2 { font: 600 13px var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; }
+
+.go { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.go a { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; text-decoration: none; color: var(--ink); border-left: 3px solid var(--leaf); }
+.go a:hover { border-color: var(--leaf); }
+.go b { display: block; font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.go span { font-size: 15px; color: var(--muted); }
+.go i { font-style: normal; color: var(--leaf); font-weight: 600; font-size: 14px; display: block; margin-top: 10px; }
+
+.words { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.word { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px 20px 18px; }
+.word b { display: block; font: 500 24px var(--body); margin-bottom: 4px; }
+.word span { font-size: 15px; color: var(--muted); }
+.word:nth-child(2) b { color: var(--leaf); }
+.lead { font-size: 17px; max-width: 36em; margin: 0; }
+
+.works { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.work { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; border-left: 3px solid var(--leaf); }
+.work b { display: block; font-size: 19px; font-weight: 600; margin-bottom: 6px; }
+.work p { font-size: 15px; color: var(--muted); margin: 0 0 10px; }
+.work ul { margin: 0; padding-left: 18px; font-size: 15px; }
+.work li { margin: 2px 0; }
+
+.apps { display: grid; gap: 14px; }
+.app { display: flex; gap: 20px; align-items: flex-start; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px; }
+.app img { width: 84px; height: 84px; border-radius: 20px; flex: none; box-shadow: 0 2px 8px rgba(60,40,20,.12); }
+.app .t { min-width: 0; flex: 1; }
+.app h3 { margin: 0; font-size: 19px; }
+.app .dev { font-size: 13px; color: var(--leaf); font-weight: 600; margin: 2px 0 0; }
+.app p { margin: 6px 0 14px; font-size: 15px; color: var(--muted); }
+.links { display: flex; flex-wrap: wrap; gap: 8px; }
+.links a { font-size: 14px; font-weight: 600; text-decoration: none; color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 0 14px; min-height: 40px; display: inline-flex; align-items: center; background: var(--bg); }
+.links a.main { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.links a.web { background: var(--leaf); color: #fff; border-color: var(--leaf); }
+
+.contact-mail { font-size: 20px; font-weight: 600; color: var(--ink); text-decoration-color: var(--leaf); text-underline-offset: 4px; }
+.biz { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; font-size: 15px; }
+.biz dt { color: var(--muted); }
+.biz dd { margin: 0; }
+
+footer { border-top: 1px solid var(--line); padding-block: 24px 36px; font-size: 13px; color: var(--muted); margin-top: 24px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; }
+footer a { color: var(--muted); }
+
+@media (max-width: 680px) {
+  header .wrap { padding-block: 14px 8px; gap: 10px; }
+  .lang { margin-left: auto; }
+  nav { order: 3; width: 100%; margin: 0 -12px; overflow-x: auto; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { flex: none; }
+  .hero { padding-block: 44px 36px; }
+  .go, .words, .works { grid-template-columns: 1fr; }
+  .app { gap: 14px; padding: 18px; }
+  .app img { width: 64px; height: 64px; border-radius: 15px; }
+  .logo { font-size: 20px; } .logo img { height: 23px; }
+  .biz { grid-template-columns: 1fr; gap: 2px; }
+  .biz dd { margin-bottom: 10px; }
+}
