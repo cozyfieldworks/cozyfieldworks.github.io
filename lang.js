@@ -9,6 +9,10 @@
         el.setAttribute('href', l === 'en' ? el.getAttribute('data-href-en') : el.dataset.hrefKo);
       }
     });
+    document.querySelectorAll('img[data-src-en]').forEach(function (im) {
+      if (!im.dataset.srcKo) im.dataset.srcKo = im.getAttribute('src');
+      im.setAttribute('src', l === 'en' ? im.getAttribute('data-src-en') : im.dataset.srcKo);
+    });
     btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.l === l ? 'true' : 'false'); });
     try { localStorage.setItem('cw-lang', l); } catch (e) {}
   }
